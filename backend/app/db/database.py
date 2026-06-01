@@ -16,12 +16,14 @@ class Base(DeclarativeBase):
 
 
 # Create the async engine
+is_sqlite = settings.database_url.startswith("sqlite")
+engine_kwargs = {"echo": settings.environment == "development"}
+if not is_sqlite:
+    engine_kwargs.update({"pool_size": 10, "max_overflow": 20})
+
 engine = create_async_engine(
     settings.database_url,
-    echo=settings.is_development,
-    pool_pre_ping=True,
-    pool_size=10,
-    max_overflow=20,
+    **engine_kwargs
 )
 
 # Session factory

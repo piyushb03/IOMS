@@ -26,13 +26,16 @@ if config.config_file_name is not None:
 # Add your model's MetaData object here for 'autogenerate' support
 target_metadata = Base.metadata
 
-# Override sqlalchemy.url from environment variable if available
-database_url = os.getenv("DATABASE_URL")
-if database_url:
-    # Ensure async driver for runtime; use sync driver for migrations
-    sync_url = database_url.replace("postgresql+asyncpg://", "postgresql://")
-    config.set_main_option("sqlalchemy.url", sync_url)
+from app.core.config import settings
 
+# Override sqlalchemy.url from application settings
+database_url = settings.database_url
+if database_url:
+    # Use sync driver for Alembic operations if using postgresql, else let async_engine_from_config handle aiosqlite
+    sync_url = database_url
+    if "postgresql+asyncpg" in database_url:
+        sync_url = database_url.replace("postgresql+asyncpg://", "postgresql://")
+    config.set_main_option("sqlalchemy.url", sync_url)
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode."""
@@ -57,11 +60,8 @@ def do_run_migrations(connection: Connection) -> None:
 
 async def run_async_migrations() -> None:
     """Run migrations in 'online' mode with async engine."""
-    # Use synchronous URL for alembic
+    # Use synchronous URL for alembic if postgresql; otherwise use whatever was set
     url = config.get_main_option("sqlalchemy.url")
-    if url and "+asyncpg" in url:
-        url = url.replace("+asyncpg", "")
-        config.set_main_option("sqlalchemy.url", url)
 
     connectable = async_engine_from_config(
         config.get_section(config.config_ini_section, {}),

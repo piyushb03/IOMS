@@ -26,8 +26,8 @@ def upgrade() -> None:
         sa.Column("sku", sa.String(100), nullable=False),
         sa.Column("price", sa.Numeric(10, 2), nullable=False),
         sa.Column("quantity", sa.Integer(), nullable=False, server_default="0"),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=False),
-        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=False),
+        sa.Column("updated_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=False),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("sku"),
     )
@@ -41,7 +41,7 @@ def upgrade() -> None:
         sa.Column("full_name", sa.String(255), nullable=False),
         sa.Column("email", sa.String(255), nullable=False),
         sa.Column("phone", sa.String(50), nullable=True),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=False),
         sa.PrimaryKeyConstraint("id"),
         sa.UniqueConstraint("email"),
     )
@@ -54,7 +54,7 @@ def upgrade() -> None:
         sa.Column("customer_id", sa.String(36), nullable=False),
         sa.Column("total_amount", sa.Numeric(10, 2), nullable=False),
         sa.Column("status", sa.String(50), nullable=False, server_default="pending"),
-        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("now()"), nullable=False),
+        sa.Column("created_at", sa.DateTime(timezone=True), server_default=sa.text("CURRENT_TIMESTAMP"), nullable=False),
         sa.ForeignKeyConstraint(["customer_id"], ["customers.id"], ondelete="RESTRICT"),
         sa.PrimaryKeyConstraint("id"),
     )
