@@ -1,4 +1,4 @@
-# IOMS — Intelligent Inventory & Order Management System
+# IOMS — Inventory & Order Management System
 
 > A production-grade, SaaS-style platform for managing products, customers, orders, and business insights. Built as a full-stack monorepo with FastAPI, React 18, PostgreSQL, and Docker.
 
@@ -12,19 +12,24 @@
 
 ## 📸 Screenshots
 
-*(Add your screenshots to the `screenshots/` folder in this repository!)*
-
 <details>
 <summary><b>Click to expand screenshots</b></summary>
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
+![Dashboard](<img width="1919" height="1074" alt="image" src="https://github.com/user-attachments/assets/b5af873b-25df-4791-9c68-b4cdd28da796" />
+)
 
 ### Products Page
-![Products](screenshots/products.png)
+![Products](<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e2cfdfe1-fb11-4b4a-8e81-b4a9e3f4dc9d" />
+)
 
 ### Add New Product
-![Add Product](screenshots/add_product.png)
+![Add Product](<img width="1887" height="861" alt="image" src="https://github.com/user-attachments/assets/6584cc37-f8ba-4b29-9cc6-8c3d1c2c23ba" />
+)
+
+### Customer
+![Customer](<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/0420eb4a-dd26-4fe4-ae33-f610dfd8bc65" />
+)
 
 </details>
 
