@@ -31,11 +31,11 @@ from app.core.config import settings
 # Override sqlalchemy.url from application settings
 database_url = settings.database_url
 if database_url:
-    # Use sync driver for Alembic operations if using postgresql, else let async_engine_from_config handle aiosqlite
-    sync_url = database_url
-    if "postgresql+asyncpg" in database_url:
-        sync_url = database_url.replace("postgresql+asyncpg://", "postgresql://")
-    config.set_main_option("sqlalchemy.url", sync_url)
+    # Ensure we use the asyncpg driver for async migrations
+    if database_url.startswith("postgresql://"):
+        database_url = database_url.replace("postgresql://", "postgresql+asyncpg://", 1)
+    
+    config.set_main_option("sqlalchemy.url", database_url)
 
 def run_migrations_offline() -> None:
     """Run migrations in 'offline' mode."""

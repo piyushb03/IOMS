@@ -1,5 +1,5 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
-
+from pydantic import field_validator
 
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(
@@ -16,6 +16,12 @@ class Settings(BaseSettings):
 
     # Database
     database_url: str = "postgresql+asyncpg://ioms_user:ioms_password@localhost:5432/ioms_db"
+
+    @field_validator("database_url")
+    def validate_database_url(cls, v: str) -> str:
+        if v.startswith("postgresql://"):
+            return v.replace("postgresql://", "postgresql+asyncpg://", 1)
+        return v
 
     # Security
     secret_key: str = "default-secret-key-change-in-production"
