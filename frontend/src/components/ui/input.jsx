@@ -1,6 +1,7 @@
+import * as React from 'react'
 import { cn } from '@/lib/utils'
 
-function Input({ className, type = 'text', ...props }) {
+const Input = React.forwardRef(({ className, type = 'text', ...props }, ref) => {
   return (
     <input
       type={type}
@@ -11,9 +12,11 @@ function Input({ className, type = 'text', ...props }) {
         'disabled:cursor-not-allowed disabled:opacity-50',
         className,
       )}
+      ref={ref}
       {...props}
     />
   )
-}
+})
+Input.displayName = 'Input'
 
 export { Input }
