@@ -2,8 +2,7 @@
 
 > A production-grade, SaaS-style platform for managing products, customers, orders, and business insights. Built as a full-stack monorepo with FastAPI, React 18, PostgreSQL, and Docker.
 
-[![CI](https://github.com/piyushb03/IOMS/actions/workflows/ci.yml/badge.svg)](https://github.com/piyushb03/IOMS/actions/workflows/ci.yml)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 ![Python](https://img.shields.io/badge/Python-3.12-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-0.115-green)
 ![React](https://img.shields.io/badge/React-18-61DAFB)
@@ -405,31 +404,3 @@ Frontend CI:
 
 ---
 
-## Screenshots
-
-> _Add screenshots of your running application here._
-
-| Dashboard | Products | Orders |
-|---|---|---|
-| ![Dashboard](screenshots/dashboard.png) | ![Products](screenshots/products.png) | ![Orders](screenshots/orders.png) |
-
----
-
-## Future Improvements
-
-- [ ] JWT authentication and role-based access control (Admin / Staff)
-- [ ] Order status workflow (pending → processing → shipped → completed)
-- [ ] CSV import/export for products and customers
-- [ ] Email notifications on order creation
-- [ ] Real-time dashboard updates via WebSocket
-- [ ] Product categories and tagging
-- [ ] Supplier management module
-- [ ] Advanced reporting and analytics (revenue charts, trend lines)
-- [ ] Inventory reorder alerts via email/Slack
-- [ ] Mobile-responsive sidebar (hamburger menu)
-
----
-
-## License
-
-[MIT License](LICENSE) © 2025 piyushb03
