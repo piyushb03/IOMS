@@ -16,20 +16,20 @@
 <summary><b>Click to expand screenshots</b></summary>
 
 ### Dashboard
-![Dashboard](<img width="1919" height="1074" alt="image" src="https://github.com/user-attachments/assets/b5af873b-25df-4791-9c68-b4cdd28da796" />
-)
+<img width="1919" height="1074" alt="image" src="https://github.com/user-attachments/assets/8688fa8f-4ea6-4c5e-90a3-22896eefb5a8" />
+
 
 ### Products Page
-![Products](<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/e2cfdfe1-fb11-4b4a-8e81-b4a9e3f4dc9d" />
-)
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/402190dc-0b2c-4798-9109-b53b39317046" />
+
 
 ### Add New Product
-![Add Product](<img width="1887" height="861" alt="image" src="https://github.com/user-attachments/assets/6584cc37-f8ba-4b29-9cc6-8c3d1c2c23ba" />
-)
+<img width="1887" height="861" alt="image" src="https://github.com/user-attachments/assets/4e296747-47bb-4c54-b956-04ebcbfddeb8" />
+
 
 ### Customer
-![Customer](<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/0420eb4a-dd26-4fe4-ae33-f610dfd8bc65" />
-)
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/7c81cf04-76e8-471d-9493-e99b6c013994" />
+
 
 </details>
 
