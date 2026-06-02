@@ -10,6 +10,26 @@
 
 ---
 
+## 📸 Screenshots
+
+*(Add your screenshots to the `screenshots/` folder in this repository!)*
+
+<details>
+<summary><b>Click to expand screenshots</b></summary>
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Products Page
+![Products](screenshots/products.png)
+
+### Add New Product
+![Add Product](screenshots/add_product.png)
+
+</details>
+
+---
+
 ## Features
 
 | Category | Features |
